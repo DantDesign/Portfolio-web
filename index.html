@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="servicios.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>&lt;Dante || Diseñador Gráfico&gt;</title>
+</head>
+
+<body>
+
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>&lt;dante&gt;</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
+                            <li><a href="#servicios" onclick="seleccionar(this)">SERVICIOS</a></li>
+                            <li><a href="#portfolio" onclick="seleccionar(this)">PORTFOLIO</a></li>
+                            <li><a href="#contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <div class="redes">
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">HOLA</p>
+                <h2>Soy <span>DANTE</span>, Diseñador Gráfico</h2>
+                <p class="descripcion">Creando productos para pequeños clientes o grandes empresas.<br>
+                    </br>Viviendo en Buenos Aires, Argentina.</p>
+                <a href="#portfolio">Ir al Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="img/foto.jpg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">#Sobre Mi</p>
+            <h2> <span>Dante Bringa</span> </h2>
+            <h3>Diseñador Gráfico</h3>
+            <p>Hola.
+                Mi nombre es Dante Bringa y soy Diseñador Gráfico, graduado en la Universidad de Flores (UFLO).
+                En este momento me encuentro trabajando de forma independiente para clientes y pequeñas empresas que requieran mis servicios.
+                En mi antiguo trabajo aparte de mis ocupaciones, tambien empleaba tareas del área de marketing, junto con trabajos de carácter administrativo en e-commerce.
+                Me apasiona el diseño en todas sus variantes, y considero como fundamental para mi desarrollo personal y profesional, seguir avanzando.
+                En mi portfolio podrás ver una selección de trabajos realizados por mi en los últimos años.</p>
+            <a href="#">Descargar CV</a>
+        </div>
+    </section>
+
+
+    <section id="servicios">
+        <h3 class="titulo-seccion">SERVICIOS</h3>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <h4>Identidad Visual</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Logos</li>
+                    <li>Papeleria</li>
+                    <li>Señaletica</li>
+                </ul>
+                <p>La identidad visual es un conjunto de diversos elementos gráficos, que tengan como finalidad mostrar y comunicar lo que identifica a una marca.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <h4>Packaging</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Cajas</li>
+                    <li>Envases</li>
+                    <li>Bolsas</li>
+                </ul>
+                <p>Con el empaque podemos mostrar a los consumidores su diseño visual, como asi tambien el material, la forma y demas que se diseñan con un fin específico.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-thin fa-notebook"></i></span>
+                <h4>Editorial</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Revistas</li>
+                    <li>Libros</li>
+                    <li>Catálogos</li>
+                </ul>
+                <p>No se encarga de la investigación o la escritura de un texto, pero sí de ayudar a organizar la información en sus páginas, para darles, jerarquía y flujo a las palabras.</p>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-database"></i></span>
+                <h4>Desarrollo Web</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Html</li>
+                    <li>Css</li>
+                    <li>Javascript</li>
+                </ul>
+                <p>Sirve para construir y mantener sitios web; y así tener una apariencia impecable y un funcionamiento rápido, para permitir la mejor experiencia del usuario.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-palette"></i></span>
+                <h4>Motion Graphics</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>GIFs</li>
+                    <li>Animaciones</li>
+                    <li>Tutoriales</li>
+                </ul>
+                <p>Este diseño permite que se puedan crear contenidos audiovisuales que no implican una gran inversión de recursos. Se pueden utilizar imágenes, ilustraciones, letras, etc.</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-person-circle-question"></i></span>
+                <h4>Diseño Publicitario</h4>
+                <hr>
+                <ul class="servicios-tag">
+                    <li>Afiches</li>
+                    <li>Ploteados</li>
+                    <li>Carteleria</li>
+                </ul>
+                <p>Aquí entran las campañas de publicidad y marketing, ya sea tradicional o digital. Se encarga de comunicar un productos, un servicio, promociones, etc.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="contenedor-skills" id="skills">
+        <h3>HABILIDADES </h3>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Illustrator y Corel Draw</p>
+                <span class="porcentaje">1</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="html"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Photoshop</p>
+                <span class="porcentaje">2</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="js"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>HTML & CSS</p>
+                <span class="porcentaje">3</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="bd"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <div class="info">
+                <p> <span class="lista"> </span>Javascript</p>
+                <span class="porcentaje">4</span>
+            </div>
+
+            <div class="barra">
+                <div class="" id="ps"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Trabajos</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto1v.jpg" alt="proyecto1">
+                <div class="info">
+                    <h4>Imagotipo e Imagen</h4>
+                    <p>Diseño de Marca</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto07.jpg" alt="proyecto2">
+                <div class="info">
+                    <h4>Rediseño de Tapa</h4>
+                    <p>Diseño Editorial</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto06.jpg" alt="proyecto3">
+                <div class="info">
+                    <h4>"BOX" Fuente Sans Serif</h4>
+                    <p>Tipografía</p>
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto04.jpg" alt="proyecto4">
+                <div class="info">
+                    <h4>Phoenix</h4>
+                    <p>Arte e Ilustración Digital</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto00.jpg" alt="proyecto5">
+                <div class="info">
+                    <h4>Zoo</h4>
+                    <p>Pictogramas</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto09.jpg" alt="proyecto6">
+                <div class="info">
+                    <h4>Productos Alimenticios</h4>
+                    <p>Packaging</p>
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto08.jpg" alt="proyecto7">
+                <div class="info">
+                    <h4>Revista (Interior)</h4>
+                    <p>Diseño Editorial</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto02v.png" alt="proyecto8">
+                <div class="info">
+                    <h4>Juego El Ahorcado</h4>
+                    <p>Javascript, Html y Css</p>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="img/proyecto03.png" alt="proyecto9">
+                <div class="info">
+                    <h4>Serie de Afiches</h4>
+                    <p>Diseño Publicitario</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contacto">
+        <h3 class="titulo-seccion">Contacto</h3>
+        <div class="contenedor-form">
+            <form action="">
+                <div class="fila mitad">
+                    <input type="text" placeholder="Nombre Completo *" class="input-mitad">
+                    <input type="email" placeholder="Dirección de Email" class="input-mitad">
+                </div>
+                <div class="fila">
+                    <input type="text" placeholder="Tema..." class="input-full">
+                </div>
+                <div class="fila">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                </div>
+
+                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+            </form>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&lt; &copy; Desarrollado por Dante || 2022 &gt;</p>
+        <div class="redes">
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

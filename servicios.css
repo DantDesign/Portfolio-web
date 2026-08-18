@@ -1,70 +1,127 @@
+/* ==========================================================================
+   SECCIÓN SERVICIOS
+   ========================================================================== */
+
 #servicios {
-    padding: 100px 15px;
-    text-align: center;
-    background-color: #602d90;
+    background-color: #541414;
+    width: 100%;
+    padding: 100px 0;
 }
 
 #servicios .titulo-seccion {
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
-    color: #f9f9fb;
+    color: #e9e9f0;
     text-decoration: underline;
-    text-decoration-color: #f6f3f3;
+    text-decoration-color: #e9e9f0;
     text-decoration-thickness: 5px;
+    margin-bottom: 50px;
 }
 
-#servicios .fila {
+/* Limitamos el contenido al centro dentro del fondo completo */
+.contenedor-servicios-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 15px;
+}
+
+/* Tarjeta / Recuadro de cada servicio */
+.servicio {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
-    justify-content: space-between;
-    max-width: 1150px;
-    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
 }
 
-#servicios .fila .servicio {
-    max-width: 350px;
-    background-color: #fff;
-    padding: 30px;
-    margin: 0 5px;
-    border-radius: 5px;
-    transition: .5s;
+/* Efecto al pasar el cursor sobre la tarjeta */
+.servicio:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+    border-color: #b43636;
 }
 
-#servicios .fila .servicio:hover {
-    box-shadow: 5px 5px 10px #565656, -5px -5px 10px #8a8a8a;
+/* Estilo para el contenedor del Icono */
+.servicio .icono {
+    width: 60px;
+    height: 60px;
+    background-color: #111135;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#servicios .fila .servicio .icono {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 15%;
-    background-color: #b65050;
-    padding: 20px;
-    margin-bottom: 25px;
+.servicio:hover .icono {
+    background-color: #541414;
+    transform: scale(1.1);
 }
 
-#servicios .fila .servicio h4 {
-    font-size: 22px;
-    margin-bottom: 25px;
+/* Título del servicio */
+.servicio h4 {
+    font-size: 18px;
+    color: #111135;
+    margin: 0 0 10px 0;
+    font-weight: 700;
 }
 
-#servicios .fila .servicio hr {
-    width: 30%;
-    margin: auto;
-    color: #000;
-    margin-bottom: 25px;
+/* Separador horizontal */
+.servicio hr {
+    width: 40px;
+    border: none;
+    height: 3px;
+    background-color: #b43636;
+    margin: 0 auto 15px auto;
 }
 
-#servicios .fila .servicio ul {
+/* Etiquetas (Logos, Papelería, etc.) */
+.servicio .servicios-tag {
     list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
 }
 
-#servicios .fila .servicio p {
+.servicio .servicios-tag li {
+    font-size: 11px;
+    background-color: #f3f4f6;
+    color: #555555;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Descripción */
+.servicio p {
     font-size: 14px;
-    line-height: 22px;
-    text-align: justify;
+    line-height: 1.5;
+    color: #666666;
+    margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (SERVICIOS)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    .contenedor-servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }

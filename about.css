@@ -72,5 +72,5 @@
 #sobremi .sobremi a:hover {
     background-color: #a630c1;
     color: #fff;
-    border: none;
+    outline: none;
 }

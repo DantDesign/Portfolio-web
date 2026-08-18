@@ -1,3 +1,7 @@
+/* ==========================================================================
+   SECCIÓN PORTFOLIO / TRABAJOS
+   ========================================================================== */
+
 #portfolio {
     max-width: 1100px;
     padding: 100px 0;
@@ -12,48 +16,364 @@
     text-decoration: underline;
     text-decoration-color: #b43636;
     text-decoration-thickness: 5px;
+    margin-bottom: 40px;
 }
 
-#portfolio .fila {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0;
+/* Grilla Centrada de Proyectos */
+.contenedor-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 15px;
+    justify-content: center;
 }
 
-#portfolio .fila .proyecto {
-    max-width: 450px;
-    border: 1px solid #000;
-    margin: 0 10px;
+/* Tarjeta individual de proyecto */
+.contenedor-portfolio-grid .proyecto {
+    width: 100%;
+    height: 260px; /* Altura uniforme para todas las tarjetas */
+    border: 1px solid #111135;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#portfolio .fila .proyecto img {
+.contenedor-portfolio-grid .proyecto img {
     width: 100%;
     height: 100%;
-    ;
     filter: grayscale(1);
     object-fit: cover;
-    transition: .5s;
+    transition: filter 0.5s ease, transform 0.5s ease;
+    display: block;
 }
 
-#portfolio .fila .proyecto:hover img {
+.contenedor-portfolio-grid .proyecto:hover img {
     filter: grayscale(0);
+    transform: scale(1.05);
 }
 
-#portfolio .fila .proyecto .info {
+/* Overlay de Información en Hover */
+.contenedor-portfolio-grid .proyecto .info {
     position: absolute;
-    left: 0px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ff5080;
+    left: 0;
+    background-color: rgba(17, 17, 53, 0.92);
+    color: #ffffff;
     width: 100%;
-    padding: 10px;
+    padding: 18px 15px;
     opacity: 0;
-    bottom: -40px;
-    transition: .5s;
+    bottom: -50px;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-#portfolio .fila .proyecto:hover .info {
+.contenedor-portfolio-grid .proyecto:hover .info {
     opacity: 1;
     bottom: 0;
+}
+
+.contenedor-portfolio-grid .proyecto .info h4 {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.contenedor-portfolio-grid .proyecto .info p {
+    font-size: 13px;
+    color: #ff5080;
+    margin: 0 0 12px 0;
+}
+
+/* Botón 'Ver Caso de Estudio' */
+.contenedor-portfolio-grid .proyecto .info .btn-ver-mas {
+    display: inline-block;
+    background-color: #b43636;
+    color: #ffffff;
+    padding: 6px 14px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-portfolio-grid .proyecto .info .btn-ver-mas:hover {
+    background-color: #ff5080;
+}
+
+/* ==========================================================================
+   SISTEMA DE VENTANAS MODALES (PURE CSS - SIN SALTO DE PÁGINA)
+   ========================================================================== */
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(10, 10, 25, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal-container:target {
+    display: flex;
+}
+
+.modal-box {
+    background: #ffffff;
+    color: #222222;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 650px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #888888;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #b43636;
+}
+
+.modal-box h3 {
+    font-size: 20px;
+    color: #111135;
+    margin: 0 0 8px 0;
+    padding-right: 25px;
+}
+
+.modal-badge {
+    display: inline-block;
+    background-color: #111135;
+    color: #ff5080;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.modal-box img {
+    max-width: 100%;       /* Se adapta al ancho del modal sin forzarlo */
+    width: auto;           /* Usa su ancho real proporcional */
+    max-height: 350px;
+    height: auto;          /* Mantiene la proporción original */
+    display: block;        /* Permite centrar con margin */
+    margin: 0 auto 15px auto; /* Centra la imagen horizontalmente */
+    border-radius: 6px;
+    border: 1px solid #eeeeee;
+}
+
+.modal-text h5 {
+    font-size: 14px;
+    color: #b43636;
+    margin: 12px 0 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.modal-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+
+.btn-enlace-modal {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #111135;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enlace-modal:hover {
+    background-color: #b43636;
+}
+/* Contenedor principal del carrusel */
+.modal-carrusel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Oculta los inputs de tipo radio */
+.modal-carrusel input[type="radio"] {
+    display: none;
+}
+
+/* Tira horizontal con todas las diapositivas */
+.modal-carrusel .slides {
+    display: flex;
+    width: 300%; /* 100% por cada una de las 3 imágenes */
+    transition: transform 0.4s ease-in-out;
+}
+
+.modal-carrusel .slide {
+    width: 33.333%;
+    position: relative;
+}
+
+.modal-carrusel .slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Flechas de navegación */
+.modal-carrusel .flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(17, 17, 53, 0.75);
+    color: #ffffff;
+    font-size: 26px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.modal-carrusel .flecha:hover {
+    background-color: #b43636;
+}
+
+.modal-carrusel .flecha.ant { left: 12px; }
+.modal-carrusel .flecha.sig { right: 12px; }
+
+/* Lógica de desplazamiento según la opción seleccionada */
+#m1-img1:checked ~ .slides { transform: translateX(0%); }
+#m1-img2:checked ~ .slides { transform: translateX(-33.333%); }
+#m1-img3:checked ~ .slides { transform: translateX(-66.666%); }
+
+/* Puntos indicadores reposicionados arriba a la derecha */
+.modal-carrusel .puntos {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    bottom: auto; /* Anula la posición inferior */
+    width: auto;  /* Anula el ancho del 100% */
+    display: flex;
+    gap: 8px;
+    z-index: 3;
+    background-color: rgba(17, 17, 53, 0.75); /* Fondo píldora oscura para resaltar */
+    padding: 6px 10px;
+    border-radius: 12px;
+}
+
+.modal-carrusel .puntos label {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Resaltado del punto activo */
+#m1-img1:checked ~ .puntos label[for="m1-img1"],
+#m1-img2:checked ~ .puntos label[for="m1-img2"],
+#m1-img3:checked ~ .puntos label[for="m1-img3"] {
+    background-color: #ff5080;
+    transform: scale(1.25);
+}
+
+/* Ajuste de ancho para carruseles de 2 imágenes */
+.modal-carrusel.carrusel-2 .slides {
+    width: 200%;
+}
+
+.modal-carrusel.carrusel-2 .slide {
+    width: 50%;
+}
+
+/* Lógica de desplazamiento para Modal 2 (0% y -50%) */
+#m2-img1:checked ~ .slides { transform: translateX(0%); }
+#m2-img2:checked ~ .slides { transform: translateX(-50%); }
+
+/* Punto activo para Modal 2 */
+#m2-img1:checked ~ .puntos label[for="m2-img1"],
+#m2-img2:checked ~ .puntos label[for="m2-img2"] {
+    background-color: #ff5080;
+    transform: scale(1.25);
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor-portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 2. Ajuste para Tablets y pantallas medianas (hasta 768px) */
+@media screen and (max-width: 768px) {
+    .modal-box {
+        padding: 20px 15px; /* Reducimos el margen interno del modal */
+    }
+
+    .modal-carrusel .slide img {
+        height: 240px; /* Reducimos la altura proporcionalmente */
+    }
+
+    /* Achicamos ligeramente las flechas para que no tapen tanto en celulares */
+    .modal-carrusel .flecha {
+        width: 32px;
+        height: 32px;
+        font-size: 22px;
+    }
+}
+
+/* 3. Ajuste para Celulares (hasta 480px) */
+@media screen and (max-width: 480px) {
+    .modal-carrusel .slide img {
+        height: 190px; /* Altura cómoda y adaptada a pantallas móviles */
+    }
 }

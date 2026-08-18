@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <!-- Se remueve user-scalable=no para cumplir estándares UX y accesibilidad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Hojas de estilo -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="servicios.css">
@@ -13,17 +16,22 @@
     <link rel="stylesheet" href="contacto.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="responsive.css">
-    <title>&lt;Dante || Diseñador Gráfico&gt;</title>
+
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>&lt;Dante Bringa || Diseñador Gráfico & UI/UX&gt;</title>
 </head>
 
 <body>
 
+    <!-- HERO / INICIO -->
     <section id="inicio">
         <div class="contenido">
             <header>
                 <div class="contenido-header">
                     <h1>&lt;dante&gt;</h1>
-                    <nav id="nav" class="">
+                    <nav id="nav">
                         <ul id="links">
                             <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
                             <li><a href="#sobremi" onclick="seleccionar(this)">SOBRE MI</a></li>
@@ -33,61 +41,71 @@
                         </ul>
                     </nav>
 
-                    <!-- Icono del menu responsive -->
-                    <div id="icono-nav" onclick="responsiveMenu()">
+                    <!-- Icono menú responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()" aria-label="Abrir menú">
                         <i class="fa-solid fa-bars"></i>
                     </div>
 
+                    <!-- Enlaces de redes en Header -->
                     <div class="redes">
+                        <a href="https://linkedin.com/in/dantebringa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+	      <a href="https://www.behance.net/dantebringa" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="https://github.com/DantDesign" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </header>
+
             <div class="presentacion">
                 <p class="bienvenida">HOLA</p>
-                <h2>Soy <span>DANTE</span>, Diseñador Gráfico</h2>
-                <p class="descripcion">Creando productos para pequeños clientes o grandes empresas.<br>
-                    </br>Viviendo en Buenos Aires, Argentina.</p>
-                <a href="#portfolio">Ir al Portfolio</a>
+                <h2>Soy <span>DANTE</span>, Diseñador Gráfico & UI/UX</h2>
+                <p class="descripcion">
+                    Diseño identidades, interfaces y experiencias visuales para marcas y proyectos.<br>
+                    <br>
+                    Buenos Aires, Argentina.
+                </p>
+                <a href="#portfolio" class="btn-cta">Ir al Portfolio</a>
             </div>
         </div>
     </section>
 
-
+    <!-- SOBRE MÍ -->
     <section id="sobremi">
         <div class="contenedor-foto">
-            <img src="img/foto.jpg" alt="">
+            <img src="img/foto_ia.png" alt="Fotografía de Dante Bringa">
         </div>
         <div class="sobremi">
             <p class="titulo-seccion">#Sobre Mi</p>
-            <h2> <span>Dante Bringa</span> </h2>
-            <h3>Diseñador Gráfico</h3>
-            <p>Hola.
-                Mi nombre es Dante Bringa y soy Diseñador Gráfico, graduado en la Universidad de Flores (UFLO).
-                En este momento me encuentro trabajando de forma independiente para clientes y pequeñas empresas que requieran mis servicios.
-                En mi antiguo trabajo aparte de mis ocupaciones, tambien empleaba tareas del área de marketing, junto con trabajos de carácter administrativo en e-commerce.
-                Me apasiona el diseño en todas sus variantes, y considero como fundamental para mi desarrollo personal y profesional, seguir avanzando.
-                En mi portfolio podrás ver una selección de trabajos realizados por mi en los últimos años.</p>
-            <a href="#">Descargar CV</a>
+            <h2><span>Dante Bringa</span></h2>
+            <h3>Diseñador Gráfico & UI/UX</h3>
+            <p>
+                Hola. Mi nombre es Dante Bringa y soy Diseñador Gráfico graduado en la Universidad de Flores (UFLO). 
+Me especializo en el desarrollo de productos digitales funcionales, atractivos y centrados en el usuario. 
+            Combino el diseño de experiencia (UI/UX) y la maquetación web con el análisis de datos (Python, SQL) para construir interfaces sólidas respaldadas por métricas e investigación. 
+            Con base en Buenos Aires, ayudo a clientes y marcas a potenciar su presencia digital mediante soluciones estratégicas integrales.
+            </p>
+            <!-- Enlace preparado para descarga directa de CV -->
+            <a href="cv-dante-bringa.pdf" download class="btn-cv">Descargar CV <i class="fa-solid fa-download"></i></a>
         </div>
     </section>
 
-
+    <!-- SERVICIOS -->
     <section id="servicios">
         <h3 class="titulo-seccion">SERVICIOS</h3>
-        <div class="fila">
+        <div class="contenedor-servicios-grid">
             <div class="servicio">
-                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <span class="icono"><i class="fa-solid fa-pen-nib"></i></span>
                 <h4>Identidad Visual</h4>
                 <hr>
                 <ul class="servicios-tag">
                     <li>Logos</li>
-                    <li>Papeleria</li>
-                    <li>Señaletica</li>
+                    <li>Papelería</li>
+                    <li>Señalética</li>
                 </ul>
-                <p>La identidad visual es un conjunto de diversos elementos gráficos, que tengan como finalidad mostrar y comunicar lo que identifica a una marca.</p>
+                <p>Construcción del sistema gráfico integral para posicionar, comunicar y transmitir los valores esenciales de tu marca.</p>
             </div>
+
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <span class="icono"><i class="fa-solid fa-box-open"></i></span>
                 <h4>Packaging</h4>
                 <hr>
                 <ul class="servicios-tag">
@@ -95,10 +113,11 @@
                     <li>Envases</li>
                     <li>Bolsas</li>
                 </ul>
-                <p>Con el empaque podemos mostrar a los consumidores su diseño visual, como asi tambien el material, la forma y demas que se diseñan con un fin específico.</p>
+                <p>Desarrollo técnico e ilustración de empaques, planos de troquel y etiquetas optimizadas para destacar en punto de venta.</p>
             </div>
+
             <div class="servicio">
-                <span class="icono"><i class="fa-thin fa-notebook"></i></span>
+                <span class="icono"><i class="fa-solid fa-book-open"></i></span>
                 <h4>Editorial</h4>
                 <hr>
                 <ul class="servicios-tag">
@@ -106,199 +125,412 @@
                     <li>Libros</li>
                     <li>Catálogos</li>
                 </ul>
-                <p>No se encarga de la investigación o la escritura de un texto, pero sí de ayudar a organizar la información en sus páginas, para darles, jerarquía y flujo a las palabras.</p>
+                <p>Maquetación, diagramación y jerarquización tipográfica para organizar información compleja de forma atractiva y legible.</p>
             </div>
-        </div>
-        <div class="fila">
+
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-database"></i></span>
+                <span class="icono"><i class="fa-solid fa-code"></i></span>
                 <h4>Desarrollo Web</h4>
                 <hr>
                 <ul class="servicios-tag">
-                    <li>Html</li>
-                    <li>Css</li>
-                    <li>Javascript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
                 </ul>
-                <p>Sirve para construir y mantener sitios web; y así tener una apariencia impecable y un funcionamiento rápido, para permitir la mejor experiencia del usuario.</p>
+                <p>Maquetación de sitios web estéticos, rápidos y adaptables a dispositivos móviles (Responsive Web Design).</p>
             </div>
+
+<div class="servicio">
+    <span class="icono"><i class="fa-solid fa-chart-line"></i></span>
+    <h4>Dashboards & Data</h4>
+    <hr>
+    <ul class="servicios-tag">
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Looker / Sheets</li>
+    </ul>
+    <p>Diseño y maquetación de paneles de control limpios e intuitivos que transforman datos complejos en métricas claras para la toma de decisiones.</p>
+</div>
+
             <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-palette"></i></span>
-                <h4>Motion Graphics</h4>
-                <hr>
-                <ul class="servicios-tag">
-                    <li>GIFs</li>
-                    <li>Animaciones</li>
-                    <li>Tutoriales</li>
-                </ul>
-                <p>Este diseño permite que se puedan crear contenidos audiovisuales que no implican una gran inversión de recursos. Se pueden utilizar imágenes, ilustraciones, letras, etc.</p>
-            </div>
-            <div class="servicio">
-                <span class="icono"><i class="fa-solid fa-person-circle-question"></i></span>
+                <span class="icono"><i class="fa-solid fa-bullhorn"></i></span>
                 <h4>Diseño Publicitario</h4>
                 <hr>
                 <ul class="servicios-tag">
                     <li>Afiches</li>
                     <li>Ploteados</li>
-                    <li>Carteleria</li>
+                    <li>Cartelería</li>
                 </ul>
-                <p>Aquí entran las campañas de publicidad y marketing, ya sea tradicional o digital. Se encarga de comunicar un productos, un servicio, promociones, etc.</p>
+                <p>Diseño estratégico de piezas gráficas promocionales para medios impresos y redes sociales dirigidas a conversión.</p>
             </div>
         </div>
     </section>
 
-
-    <div class="contenedor-skills" id="skills">
-        <h3>HABILIDADES </h3>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Illustrator y Corel Draw</p>
-                <span class="porcentaje">1</span>
+<!-- HABILIDADES & HERRAMIENTAS -->
+<section class="contenedor-skills" id="skills">
+    <h3 class="titulo-seccion">HABILIDADES & HERRAMIENTAS</h3>
+    
+    <div class="skills-grid">
+        <!-- Pilar 1: UI/UX & Branding -->
+        <div class="categoria-skill">
+            <div class="header-categoria">
+                <i class="fa-solid fa-palette"></i>
+                <h4>Diseño & Marca</h4>
             </div>
+            <ul class="lista-tags">
+                <li>Adobe (Ai, Ps, Id)</li>
+                <li>Identidad Visual</li>
+                <li>Diseño de Logotipos</li>
+                <li>Packaging</li>
+                <li>Editorial & Tipografía</li>
+                <li>Señalética</li>
+            </ul>
+        </div>
 
-            <div class="barra">
-                <div class="" id="html"></div>
+        <!-- Pilar 2: Front-End -->
+        <div class="categoria-skill">
+            <div class="header-categoria">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h4>Diseño UX/UI & Web</h4>
+            </div>
+            <ul class="lista-tags">
+                <li>Figma</li>
+                <li>Prototipado Interactivo</li>
+                <li>Wireframing & UX</li>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+            </ul>
+        </div>
+
+        <!-- Pilar 3: Datos & Visualización -->
+        <div class="categoria-skill">
+            <div class="header-categoria">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h4>Datos & Visualización</h4>
+            </div>
+            <ul class="lista-tags">
+                <li>Python</li>
+                <li>SQL</li>
+                <li>Dashboards</li>
+                <li>Google Sheets / Excel</li>
+                <li>Google Colab</li>
+                <li>Looker Studio</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <h3 class="titulo-seccion">TRABAJOS DESTACADOS</h3>
+    
+    <div class="contenedor-portfolio-grid">
+        
+        <!-- Proyecto 1: Branding -->
+        <div class="proyecto">
+            <img src="img/proyecto1v.jpg" alt="Identidad de Marca e Imagotipo">
+            <div class="info">
+                <h4>Identidad de Marca</h4>
+                <p>Branding & Identidad Visual</p>
+                <a href="#modal-1" class="btn-ver-mas">Ver Caso de Estudio</a>
             </div>
         </div>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>Photoshop</p>
-                <span class="porcentaje">2</span>
-            </div>
 
-            <div class="barra">
-                <div class="" id="js"></div>
+        <!-- Proyecto 2: Packaging -->
+        <div class="proyecto">
+            <img src="img/proyecto09.jpg" alt="Packaging de Productos">
+            <div class="info">
+                <h4>Línea de Packaging</h4>
+                <p>Packaging & Etiquetado</p>
+                <a href="#modal-2" class="btn-ver-mas">Ver Caso de Estudio</a>
             </div>
         </div>
-        <div class="skill">
-            <div class="info">
-                <p> <span class="lista"> </span>HTML & CSS</p>
-                <span class="porcentaje">3</span>
-            </div>
 
-            <div class="barra">
-                <div class="" id="bd"></div>
+        <!-- Proyecto 3: UI/UX Figma -->
+        <div class="proyecto">
+    <img src="img/biciApp.png" alt="Prototipo TravelBike UI/UX">
+    <div class="info">
+        <h4>TravelBike (App Móvil)</h4>
+        <p>Diseño UI/UX & Figma</p>
+        <a href="#modal-3" class="btn-ver-mas">Ver Caso de Estudio</a>
+    </div>
+    </div>
+
+        <!-- Proyecto 4: Editorial -->
+        <div class="proyecto">
+            <img src="img/proyecto07.jpg" alt="Diseño Editorial">
+            <div class="info">
+                <h4>Rediseño Editorial</h4>
+                <p>Diseño & Maquetación</p>
+                <a href="#modal-4" class="btn-ver-mas">Ver Caso de Estudio</a>
             </div>
         </div>
-        <div class="skill">
+
+        <!-- Proyecto 5: Señalética -->
+        <div class="proyecto">
+            <img src="img/proyecto00.jpg" alt="Sistema Iconográfico">
             <div class="info">
-                <p> <span class="lista"> </span>Javascript</p>
-                <span class="porcentaje">4</span>
+                <h4>Sistema de Pictogramas</h4>
+                <p>Iconografía & Señalética</p>
+                <a href="#modal-5" class="btn-ver-mas">Ver Caso de Estudio</a>
+            </div>
+        </div>
+
+        <!-- Proyecto 6: Publicidad -->
+        <div class="proyecto">
+            <img src="img/proyecto03.png" alt="Campaña Publicitaria">
+            <div class="info">
+                <h4>Campaña Publicitaria</h4>
+                <p>Diseño Publicitario & Fotomontaje</p>
+                <a href="#modal-6" class="btn-ver-mas">Ver Caso de Estudio</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- VENTANAS MODALES PURE-CSS PARA CASOS DE ESTUDIO -->
+    
+    <!-- Modal 1 -->
+<div id="modal-1" class="modal-container">
+    <div class="modal-box">
+        <a href="#!" class="modal-close">&times;</a>
+        <h3>Identidad de Marca</h3>
+        <span class="modal-badge">Branding & Identidad Visual</span>
+        
+        <!-- CARRUSEL CSS -->
+        <div class="modal-carrusel">
+            <!-- Inputs invisibles para controlar las diapositivas -->
+            <input type="radio" name="carrusel-m1" id="m1-img1" checked>
+            <input type="radio" name="carrusel-m1" id="m1-img2">
+            <input type="radio" name="carrusel-m1" id="m1-img3">
+
+            <div class="slides">
+                <!-- Imagen 1 -->
+                <div class="slide">
+                    <img src="img/proyecto1v.jpg" alt="Vista 1">
+                    <label for="m1-img2" class="flecha sig">&rsaquo;</label>
+                </div>
+                <!-- Imagen 2 -->
+                <div class="slide">
+                    <label for="m1-img1" class="flecha ant">&lsaquo;</label>
+                    <img src="img/proyecto1v.jpg" alt="Vista 2">
+                    <label for="m1-img3" class="flecha sig">&rsaquo;</label>
+                </div>
+                <!-- Imagen 3 -->
+                <div class="slide">
+                    <label for="m1-img2" class="flecha ant">&lsaquo;</label>
+                    <img src="img/proyecto.jpg" alt="Vista 3">
+                </div>
             </div>
 
-            <div class="barra">
-                <div class="" id="ps"></div>
+            <!-- Puntos indicadores inferiores -->
+            <div class="puntos">
+                <label for="m1-img1"></label>
+                <label for="m1-img2"></label>
+                <label for="m1-img3"></label>
+            </div>
+        </div>
+
+        <div class="modal-text">
+            <h5>El Desafío</h5>
+            <p>Desarrollar un sistema de identidad visual reconocible y escalable para una marca en crecimiento. La meta era llevar la marca más allá del logotipo, creando aplicaciones consistentes en diversos soportes físicos y digitales.</p>
+            <h5>Mi Solución</h5>
+            <p>Diseñé un sistema visual flexible basado en la geometría del logo. La marca no se queda solo en el símbolo. Se expande con fuerza a todos los soportes para asegurar que el negocio sea memorable en cada punto de contacto.</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal 2 -->
+    <div id="modal-2" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Packaging de Productos Alimenticios</h3>
+            <span class="modal-badge">Packaging</span>
+            <img src="img/proyecto09.jpg" alt="Proyecto 2 Ampliado">
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Diseñar plano de troquel, tabla nutricional y arte de tapa para línea de alimentos comerciales.</p>
+                <h5>Mi Solución</h5>
+                <p>Estructuración de información legal y composición ilustrada atractiva para el consumidor.</p>
             </div>
         </div>
     </div>
 
+    <!-- Modal 3: TravelBike Figma -->
+    <div id="modal-3" class="modal-container">
+    <div class="modal-box">
+        <a href="#!" class="modal-close">&times;</a>
+        <h3>TravelBike - Prototipo UI/UX</h3>
+        <span class="modal-badge">Figma & Prototipado</span>
+        <img src="img/biciApp.png" alt="Muestrario de pantallas de TravelBike">
+        
+        <div class="modal-text">
+            <h5>El Desafío</h5>
+            <p>Diseñar la interfaz y la experiencia de usuario (UI/UX) para una aplicación móvil orientada a la movilidad urbana en bicicleta.</p>
+            
+            <h5>Herramientas Utilizadas</h5>
+            <p>Figma, Arquitectura de Información, Wireframing y Componentes Autolayout.</p>
 
-    <section id="portfolio">
-        <h3 class="titulo-seccion">Trabajos</h3>
-        <div class="fila">
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto1v.jpg" alt="proyecto1">
-                <div class="info">
-                    <h4>Imagotipo e Imagen</h4>
-                    <p>Diseño de Marca</p>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto07.jpg" alt="proyecto2">
-                <div class="info">
-                    <h4>Rediseño de Tapa</h4>
-                    <p>Diseño Editorial</p>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto06.jpg" alt="proyecto3">
-                <div class="info">
-                    <h4>"BOX" Fuente Sans Serif</h4>
-                    <p>Tipografía</p>
-                </div>
+            <h5>Resultado</h5>
+            <p>Un prototipo interactivamente funcional de alta fidelidad que contempla el flujo del usuario desde el registro hasta la selección de rutas seguras en la ciudad.</p>
+            
+            <!-- Reemplaza la URL por el enlace real a tu prototipo en Figma -->
+            <a href="https://www.figma.com/proto/XTvSvWmyT739tMZOrLtf0X/TravelBike?node-id=789-4399&t=rfC2tkPRdldLvb19-1&scaling=scale-down&content-scaling=fixed&page-id=789%3A3933&starting-point-node-id=789%3A4226" target="_blank" rel="noopener noreferrer" class="btn-enlace-modal">
+                Probar Prototipo en Figma <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </div>
+   </div>
+
+    <!-- Modal 4 -->
+    <div id="modal-4" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Rediseño de Tapa de Libro</h3>
+            <span class="modal-badge">Diseño Editorial</span>
+            <img src="img/proyecto07.jpg" alt="Proyecto 4 Ampliado">
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Actualizar la estética visual de una publicación clásica para atraer a nuevas audiencias.</p>
+                <h5>Mi Solución</h5>
+                <p>Uso de jerarquía tipográfica limpia y contraste cromático para destacar en anaquel impreso.</p>
             </div>
         </div>
-        <div class="fila">
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto04.jpg" alt="proyecto4">
-                <div class="info">
-                    <h4>Phoenix</h4>
-                    <p>Arte e Ilustración Digital</p>
-                </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal-5" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Sistema de Pictogramas "Zoo"</h3>
+            <span class="modal-badge">Señalética / Iconografía</span>
+
+    <!-- CARRUSEL CON 2 IMÁGENES -->
+    <div class="modal-carrusel carrusel-2">
+        <!-- 2 Inputs invisibles -->
+        <input type="radio" name="carrusel-m2" id="m2-img1" checked>
+        <input type="radio" name="carrusel-m2" id="m2-img2">
+
+        <div class="slides">
+            <!-- Imagen 1 -->
+            <div class="slide">
+                <img src="img/proyecto00.jpg" alt="Vista Principal">
+                <label for="m2-img2" class="flecha sig">&rsaquo;</label>
             </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto00.jpg" alt="proyecto5">
-                <div class="info">
-                    <h4>Zoo</h4>
-                    <p>Pictogramas</p>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto09.jpg" alt="proyecto6">
-                <div class="info">
-                    <h4>Productos Alimenticios</h4>
-                    <p>Packaging</p>
-                </div>
+        
+            <!-- Imagen 2 -->
+            <div class="slide">
+                <label for="m2-img1" class="flecha ant">&lsaquo;</label>
+                <img src="img/proyecto.jpg" alt="Vista Secundaria">
             </div>
         </div>
-        <div class="fila">
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto08.jpg" alt="proyecto7">
-                <div class="info">
-                    <h4>Revista (Interior)</h4>
-                    <p>Diseño Editorial</p>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto02v.png" alt="proyecto8">
-                <div class="info">
-                    <h4>Juego El Ahorcado</h4>
-                    <p>Javascript, Html y Css</p>
-                </div>
-            </div>
-            <div class="proyecto">
-                <div class="overlay"></div>
-                <img src="img/proyecto03.png" alt="proyecto9">
-                <div class="info">
-                    <h4>Serie de Afiches</h4>
-                    <p>Diseño Publicitario</p>
-                </div>
+
+        <!-- 2 Puntos indicadores -->
+        <div class="puntos">
+            <label for="m2-img1"></label>
+            <label for="m2-img2"></label>
+        </div>
+    </div>
+
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Diseñar una serie de iconos señaléticos legibles a distancia para la orientación de visitantes dentro de un zoológico. El sistema debía ser claro para públicos de todas las edades y nacionalidades en un entorno abierto.</p>
+                <h5>Mi Solución</h5>
+                <p>Desarrollé un sistema basado en la síntesis morfológica unificada. Utilicé iconografía intuitiva para que cada animal y servicio sea reconocible al instante.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-
-    <section id="contacto">
-        <h3 class="titulo-seccion">Contacto</h3>
-        <div class="contenedor-form">
-            <form action="">
-                <div class="fila mitad">
-                    <input type="text" placeholder="Nombre Completo *" class="input-mitad">
-                    <input type="email" placeholder="Dirección de Email" class="input-mitad">
-                </div>
-                <div class="fila">
-                    <input type="text" placeholder="Tema..." class="input-full">
-                </div>
-                <div class="fila">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
-                </div>
-
-                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
-            </form>
+    <!-- Modal 6 -->
+    <div id="modal-6" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Serie de Afiches Publicitarios</h3>
+            <span class="modal-badge">Diseño Publicitario</span>
+            <img src="img/proyecto03.png" alt="Proyecto 6 Ampliado">
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Comunicar un concepto publicitario directo a través de un montaje fotográfico promocional.</p>
+                <h5>Mi Solución</h5>
+                <p>Retoque digital, fotomontaje en Photoshop y jerarquización de textos promocionales.</p>
+            </div>
         </div>
-    </section>
+    </div>
 
+    <!-- Modal 7 x eliminado -->
+    <div id="modal-7" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Phoenix - Ilustración Vectorial</h3>
+            <span class="modal-badge">Ilustración Digital</span>
+            <img src="img/proyecto04.jpg" alt="Proyecto 7 Ampliado">
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Sintetizar formas complejas en un vector estilizado apto para serigrafía e impresión publicitaria.</p>
+                <h5>Mi Solución</h5>
+                <p>Trazado en curvas de Bézier con paleta limitada de alto impacto visual.</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal 8 x eliminado -->
+    <div id="modal-8" class="modal-container">
+        <div class="modal-box">
+            <a href="#!" class="modal-close">&times;</a>
+            <h3>Juego Interactivo "El Ahorcado"</h3>
+            <span class="modal-badge">Desarrollo Frontend</span>
+            <img src="img/proyecto02v.png" alt="Proyecto 8 Ampliado">
+            <div class="modal-text">
+                <h5>El Desafío</h5>
+                <p>Programar una aplicación web lógica e interactiva con manipulación del DOM y diseño responsive.</p>
+                <h5>Mi Solución</h5>
+                <p>Desarrollo en JavaScript con interfaz personalizada mediante CSS3.</p>
+            </div>
+        </div>
+    </div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+    <h3 class="titulo-seccion">CONTACTO</h3>
+    <div class="contenedor-form">
+        <!-- Reemplaza f/... por la clave que te da Formspree -->
+        <form id="form-contacto" action="https://formspree.io/f/mljrjywp" method="POST">
+            <div class="fila mitad">
+                <input type="text" name="nombre" placeholder="Nombre Completo *" required class="input-mitad">
+                <input type="email" name="email" placeholder="Dirección de Email *" required class="input-mitad">
+            </div>
+            <div class="fila">
+                <input type="text" name="_subject" placeholder="Asunto..." class="input-full">
+            </div>
+            <div class="fila">
+                <textarea name="mensaje" cols="30" rows="8" placeholder="Escribe tu mensaje aquí..." required class="input-full"></textarea>
+            </div>
+
+            <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+        </form>
+    </div>
+</section>
+
+	<!-- Mensaje de éxito flotante -->
+	<div id="mensaje-exito" class="alerta-exito">
+    		<span class="icono">✓</span> 
+    		    <div>
+        		        <strong>¡Enviado con éxito!</strong>
+        		    <p>Me contactare pronto.</p>
+    		</div>
+	</div>
+
+<!-- FOOTER -->
     <footer>
-        <p>&lt; &copy; Desarrollado por Dante || 2022 &gt;</p>
-        <div class="redes">
+        <div class="contenedor-footer">
+            <p>&copy; 2026 Dante Bringa | Diseñador Gráfico & UI/UX. Todos los derechos reservados.</p>
+            <div class="redes-footer">
+                <a href="https://linkedin.com/in/dantebringa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+	<a href="https://www.behance.net/dantebringa" target="_blank" rel="noopener noreferrer" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                <a href="https://github.com/DantDesign" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
     </footer>
 

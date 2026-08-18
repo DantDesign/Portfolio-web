@@ -1,4 +1,5 @@
 footer {
+    width: 100%;
     background-color: #000;
     color: #fff;
     text-align: center;
@@ -9,6 +10,45 @@ footer a {
     text-decoration: none;
     color: #fff;
     display: inline-block;
-    margin: 5px;
+    margin: 8px;
     font-size: 26px;
+}
+
+.redes-footer a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            margin-left: 10px;
+            transition: .5s;
+        }
+
+.redes-footer a:hover {
+            color: #ff5080;
+        }
+
+/* Por defecto para celulares (Estilo vertical) */
+.contenedor-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.redes-footer {
+  display: flex;
+  gap: 0px;
+}
+
+/* Para pantallas más grandes (Estilo horizontal) */
+@media (min-width: 768px) {
+  .contenedor-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 20px 20px;
+  }
 }

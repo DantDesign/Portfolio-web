@@ -58,6 +58,12 @@
     #icono-nav {
         display: block;
     }
+
+#inicio {
+    /* Si tu menú mide 48px de top + su propio alto, dale un margen seguro */
+    padding-top: 100px !important; 
+}
+
     #inicio .contenido .presentacion h2 {
         font-size: 40px;
     }

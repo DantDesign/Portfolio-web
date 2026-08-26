@@ -1,3 +1,37 @@
+/* ==========================================
+   1. MÓVIL (Base para pantallas chicas)
+   ========================================== */
+#sobremi .contenedor-foto {
+    width: 300px !important; 
+    min-width: 300px !important;
+    max-width: 300px !important;
+    margin: 0 auto 30px auto !important; /* Centrado perfecto en celular */
+}
+
+/* ==========================================
+   2. TABLETS (A partir de 721px en adelante)
+   ========================================== */
+@media (min-width: 721px) {
+    #sobremi .contenedor-foto {
+        /* Se despega del borde izquierdo y se separa del texto a la derecha */
+        margin-left: 40px !important; 
+        margin-right: 40px !important; 
+        margin-bottom: 0 !important;
+    }
+}
+
+/* ==========================================
+   3. PC / MONITORES (A partir de 1025px en adelante)
+   ========================================== */
+@media (min-width: 1025px) {
+    #sobremi .contenedor-foto {
+        /* En pantallas gigantes vuelve al borde del contenedor de diseño */
+        margin-left: 0 !important;   
+        margin-right: 80px !important; 
+    }
+}
+
+/* =========================================== */
 @media screen and (max-width: 720px) {
     .redes {
         display: none;
@@ -28,18 +62,17 @@
         font-size: 40px;
     }
 
+    #inicio .contenido .presentacion {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
     /*SOBRE MI*/
     #sobremi {
         padding: 50px 0;
         display: block;
     }
-    #sobremi .contenedor-foto {
-        max-width: 200px;
-        margin: auto;
-    }
-    #sobremi .contenedor-foto img {
-        padding: 8px;
-    }
+
     #sobremi .sobremi .titulo-seccion {
         text-align: center;
     }

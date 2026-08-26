@@ -6,16 +6,28 @@
     display: flex;
 }
 
+/* --- DISEÑO UNIFICADO (Tamaño, borde y grosor idénticos en todo formato) --- */
 #sobremi .contenedor-foto {
-    max-width: 400px;
-    margin-right: 80px;
+    /* Forzamos a que el contenedor mida siempre 300px exactos */
+    width: 300px !important; 
+    min-width: 300px !important;
+    max-width: 300px !important;
+    
+    /* Por defecto se centra (celulares y tablets) */
+    margin: 0 auto 30px auto; 
 }
 
 #sobremi .contenedor-foto img {
-    padding: 20px;
-    width: 100%;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 300px !important; /* Mantiene el cuadrado de 300x300 */
+    
+    /* El borde rojo se queda fijo en para siempre */
+    padding: 16px !important; 
+    
     border-radius: 30px;
     background-color: #9f3030;
+    object-fit: cover; 
 }
 
 #sobremi .sobremi {

@@ -230,6 +230,8 @@
 .btn-enlace-modal:hover {
     background-color: #b43636;
 }
+
+
 /* Contenedor principal del carrusel */
 .modal-carrusel {
     position: relative;
@@ -336,13 +338,13 @@
     width: 50%;
 }
 
-/* Lógica de desplazamiento para Modal 2 (0% y -50%) */
-#m2-img1:checked ~ .slides { transform: translateX(0%); }
-#m2-img2:checked ~ .slides { transform: translateX(-50%); }
+/* Lógica de desplazamiento genérica para carruseles de 2 imágenes (0% y -50%) */
+.modal-carrusel.carrusel-2 input[type="radio"]:nth-of-type(1):checked ~ .slides { transform: translateX(0%); }
+.modal-carrusel.carrusel-2 input[type="radio"]:nth-of-type(2):checked ~ .slides { transform: translateX(-50%); }
 
-/* Punto activo para Modal 2 */
-#m2-img1:checked ~ .puntos label[for="m2-img1"],
-#m2-img2:checked ~ .puntos label[for="m2-img2"] {
+/* Punto activo genérico para carruseles de 2 imágenes */
+.modal-carrusel.carrusel-2 input[type="radio"]:nth-of-type(1):checked ~ .puntos label:nth-of-type(1),
+.modal-carrusel.carrusel-2 input[type="radio"]:nth-of-type(2):checked ~ .puntos label:nth-of-type(2) {
     background-color: #ff5080;
     transform: scale(1.25);
 }
@@ -370,6 +372,7 @@
         font-size: 22px;
     }
 }
+
 
 /* 3. Ajuste para Celulares (hasta 480px) */
 @media screen and (max-width: 480px) {
